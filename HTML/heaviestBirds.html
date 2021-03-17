@@ -11,26 +11,77 @@
 <body>
     <h1>Heaviest Bird</h1>
     <table border="1">
+        <thead>
+            <tr>
+                <th>Animal</th>
+                <th>Average mass</th>
+                <th>Maximum mass</th>
+                <th>Flighted</th>
+            </tr>
+        </thead>
 
-        <tr>
-            <th>Animal</th>
-            <th>Average mass</th>
-            <th>Maximum mass</th>
-            <th>Flighted</th>
-        </tr>
-        <tr>
-            <td>Ostrich</td>
-            <td>140(230)</td>
-            <td>156 (346)</td>
-            <td>No</td>
-        </tr>
+        <tbody>
+            <tr>
+                <td>Ostrich</td>
+                <td>140(230)</td>
+                <td>156 (346)</td>
+                <td>No</td>
+            </tr>
 
-        <tr>
-            <td>Somali Ostrict</td>
-            <td>90 (200)</td>
-            <td>156 (994)</td>
-            <td>No</td>
-        </tr>
+            <tr>
+                <td>Somali Ostrict</td>
+                <td>90 (200)</td>
+                <td>156 (994)</td>
+                <td>No</td>
+            </tr>
+
+            <tr>
+                <td>Turkey</td>
+                <td>90 (200)</td>
+                <td>156 (994)</td>
+                <td>Yees</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Version 2</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th rowspan="2">Animal</th>
+                <th colspan="2">Average mass</th>
+                <th rowspan="2">Flighted</th>
+            </tr>
+
+            <tr>
+                <th>KG</th>
+                <th>LB</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Ostrich</td>
+                <td>140(230)</td>
+                <td>140(230)</td>
+                <td>No</td>
+            </tr>
+
+            <tr>
+                <td>Somali Ostrict</td>
+                <td>90 (200)</td>
+                <td>90 (200)</td>
+                <td>No</td>
+            </tr>
+
+            <tr>
+                <td>Turkey</td>
+                <td>90 (200)</td>
+                <td>90 (200)</td>
+                <td>Yees</td>
+            </tr>
+        </tbody>
     </table>
 </body>
 
