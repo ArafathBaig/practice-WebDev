@@ -39,6 +39,39 @@
         <button>Search Reddit</button>
     </form>
 
+    <h2>More Inputs</h2>
+
+    <form action="/birds">
+        <input type="checkbox" name="agree_tos" id="agree">
+        <label for="agree">I agree to everything</label>
+        <p>
+            <label for="XS">XS: </label>
+            <input type="radio" name="drone" id="xs" value="lolol">
+            <label for="s">S: </label>
+            <input type="radio" name="drone" id="s">
+            <label for="m">m: </label>
+            <input type="radio" name="drone" id="m">
+        </p>
+
+        <p>
+            <label for="cheese"> Amount of cheese: </label>
+            <input type="range" id="cheese" min="1" max="10" step="7" value="75" name="chee se_level">
+        </p>
+        <button>Submit</button>
+    </form>
+
+    <h2>Validation demo</h2>
+
+    <form action="/dummy">
+        <label for="first">Enter the first name: </label>
+        <input type="text" name="first" id="first" required>
+        <p>
+            <label for="username1">Username: </label>
+            <input type="text" id="username1" name="username" minlength="5" maxlength="20" required>
+        </p>
+        <button>Submit</button>
+    </form>
+
 
 </body>
 
