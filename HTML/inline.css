@@ -3,6 +3,8 @@ h1{
     font-weight: 400;
     text-decoration:#a57d6d underline wavy;
     letter-spacing: 10px;
+    font-size: 80px;
+    font-family: fantasy;
 }
 
 p{
