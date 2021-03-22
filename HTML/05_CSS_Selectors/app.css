@@ -62,6 +62,6 @@ a:hover{
     text-decoration: underline;
 }
 
-.post button:active{
+.post  button:active{
     background-color: #02c39a ;
 }
