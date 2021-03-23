@@ -1,23 +1,29 @@
-span{
-    background-color: palevioletred;
-    border: 1px solid black;
-    padding: 50px;
-    margin: 50px;
-}
-
-h1{
-    background-color: paleturquoise;
-    width: 300px;
-    padding: 50px;
-    margin: 50px;
-    border: 1px solid black;
+section{
+    background-color: grey;
+    width: 800px;
+    height: 800px;
 }
 
 div{
-    height: 200px;
-    width: 200px;
-    background-color: olivedrab;
-    border: 5px solid black;
-    display: inline-block;
-    margin: 20px;
+    background-color: palevioletred;
+    width: 50%;
+    height: 50%;
+}
+
+h1{
+    font-size: 40px;
+    border: 1px solid black;
+    line-height: 200%;
+}
+
+h2{
+    font-size: 2em;
+}
+
+p{
+    font-size: .4em;
+}
+
+article{
+    font-size: 30px ;
 }
