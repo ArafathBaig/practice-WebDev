@@ -25,3 +25,17 @@ div{
     border-left-style: dotted;
     border-radius: 30px;
 }
+
+h1{
+
+    width: 200px;
+    background-color: pink;
+    padding: 30px;
+    padding-top: 50px;
+    padding-left: 30px;
+}
+
+button{
+    padding: 10px 20px;
+    border-radius: 20px;
+}
