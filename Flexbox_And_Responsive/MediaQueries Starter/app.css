@@ -64,7 +64,7 @@ ul{
         font-size: 4em;
     }
 
-    nav{
+    nav, nav ul  {
         flex-direction: column;
         align-items: center;
     }
