@@ -44,3 +44,25 @@ isChild(15);
 // function isBetween2(num) {
 //     return num >= 1 && num <= 10;
 // }
+
+const math = {
+    multiply: function (x, y) {
+        return x * y;
+    },
+    square: function (num) {
+        return num * num;
+    },
+    add: function (x, y) {
+        return x + y;
+    }
+}
+
+
+const myMath = {
+    add(x, y) {
+        return a + b;
+    },
+    remove(x, y) {
+        return x + y;
+    }
+}
