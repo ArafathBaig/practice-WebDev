@@ -17,3 +17,7 @@ const allPets = [...nums, ...dums]
 function sum(...nums) {
     return nums.reduce((total, el) => total + el)
 }
+
+const [gold, silver, bronze, ...everyoneElse] = nums;
+
+const { birthYear: birth, dumpak: gimpak = 'N/A' } = user;
