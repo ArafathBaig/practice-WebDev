@@ -1,10 +1,19 @@
-const id = setInterval(() => {
-    console.log(Math.random());
-}, 2000)
+function multiply(numSides = 6) {
+    return Math.floor(Math.random() * 6) + 1;
+}
 
-const nums = [9, 8, 7, 6, 5, , 4, 3, 2, 1]
-nums.filter(n => {
-    return n === 4;
-});
+function greet(message, name = "Juaquin") {
+    console.log(`${message} ${name}`);
+}
 
-nums.reduce((a, b) => a + b);
+let nums = [1, 2, 3, 4, 5, 6];
+
+Math.max(...nums)
+
+let dums = [84, 231, 231, 1, 1, 2, 44]
+
+const allPets = [...nums, ...dums]
+
+function sum(...nums) {
+    return nums.reduce((total, el) => total + el)
+}
