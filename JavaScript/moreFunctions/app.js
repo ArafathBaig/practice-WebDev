@@ -1,29 +1,10 @@
-const number = [18, 29, 22, 11, 10];
+const id = setInterval(() => {
+    console.log(Math.random());
+}, 2000)
 
-function print(element) {
-    console.log(element);
-}
-
-number.forEach(function (el) {
-    console.log(el);
+const nums = [9, 8, 7, 6, 5, , 4, 3, 2, 1]
+nums.filter(n => {
+    return n === 4;
 });
 
-movie.forEach(function (el) {
-    console.log(el.title);
-});
-
-let nums2 = number.map(function (num) {
-    return num * 2;
-});
-
-const add = (x, y) => {
-    return x + y;
-}
-
-const square = (x) => {
-    x ** 2;
-}
-
-const cube = () => (
-    y ** 3
-)
+nums.reduce((a, b) => a + b);
