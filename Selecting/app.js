@@ -9,3 +9,9 @@ const squareImages = document.getElementsByClassName('square')
 for (let img of squareImages) {
     console.log(img.src)
 }
+
+const links = document.querySelectorAll('p a');
+
+for (let link of links) {
+    console.log(link.href)
+}
