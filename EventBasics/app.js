@@ -1,39 +1,25 @@
-const btn = document.querySelector('#v2');
+const btn = document.querySelector("#v2");
 
 btn.onclick = function () {
-    console.log("YOU CLICKED ME!")
-    console.log("I HOPE IT WORKED!!")
+    console.log("You clicked me!!");
 }
 
-function scream() {
-    console.log("AAAAAHHHHH");
-    console.log("STOP TOUCHING ME!")
+btn.onmouseenter = () => {
+    console.log("Screeeaaam")
 }
 
-btn.onmouseenter = scream;
-
-
-document.querySelector('h1').onclick = () => {
-    alert('you clicked the h1!')
-}
-
-
-const btn3 = document.querySelector('#v3');
-btn3.addEventListener('click', function () {
-    alert("CLICKED!");
-})
+const btn3 = document.querySelector("#third");
+btn3.addEventListener('click', () => {
+    alert("Final form aaaahhh");
+});
 
 function twist() {
-    console.log("TWIST!")
+    console.log("twist");
 }
+
 function shout() {
-    console.log("SHOUT!")
+    console.log("shout");
 }
 
-const tasButton = document.querySelector('#tas');
-
-// tasButton.onclick = twist;
-// tasButton.onclick = shout;
-
-tasButton.addEventListener('click', twist)
-tasButton.addEventListener('click', shout)
+btn3.addEventListener('click', twist, { once: true })
+btn3.addEventListener('click', shout)
