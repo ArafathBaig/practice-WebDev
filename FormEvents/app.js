@@ -1,25 +1,23 @@
+const tweetForm = document.querySelector("#tweetForm")
 
+tweetForm.addEventListener("submit", function (e) {
+    const usernameInput = document.querySelectorAll('input')[0];
+    const usernameTweet = document.querySelectorAll('input')[1];
 
-const tweetForm = document.querySelector('#tweetForm');
-const tweetsContainer = document.querySelector('#tweets');
-tweetForm.addEventListener('submit', function (e) {
-    e.preventDefault();
+    const name = usernameInput.value;
+    const tweet = usernameTweet.value;
+    console.log("submit");
 
-    // const usernameInput = document.querySelectorAll('input')[0];
-    // const tweetInput = document.querySelectorAll('input')[1];
-    const usernameInput = tweetForm.elements.username;
-    const tweetInput = tweetForm.elements.tweet;
-    addTweet(usernameInput.value, tweetInput.value)
-    usernameInput.value = '';
-    tweetInput.value = '';
-});
-
-const addTweet = (username, tweet) => {
     const newTweet = document.createElement('li');
     const bTag = document.createElement('b');
-    bTag.append(username)
-    newTweet.append(bTag);
-    newTweet.append(`- ${tweet}`)
-    tweetsContainer.append(newTweet);
-}
 
+    bTag.append(name);
+    newTweet.append(bTag);
+    newTweet.append(` - ${tweet}`);
+    console.log(newTweet)
+    const tweetsUL = document.querySelector('#tweets');
+    tweetsUL.appendChild(newTweet);
+    usernameInput.value = "";
+    usernameTweet.value = "";
+    e.preventDefault();
+});
