@@ -9,6 +9,7 @@ const hardBtn = document.querySelector("#hardBtn");
 let num = 6;
 
 easyBtn.addEventListener("click", function () {
+    num = 3;
     easyBtn.classList.add("selected");
     hardBtn.classList.remove("selected");
     resetButton.textContent = "New Colors";
@@ -25,10 +26,12 @@ easyBtn.addEventListener("click", function () {
             squares[i].style.display = "none";
         }
     }
+    h1.style.backgroundColor = "steelblue";
 
 })
 
 hardBtn.addEventListener("click", function () {
+    num = 6;
     hardBtn.classList.add("selected");
     easyBtn.classList.remove("selected");
     colors = generateRandomColors(6);
@@ -40,6 +43,7 @@ hardBtn.addEventListener("click", function () {
         squares[i].style.backgroundColor = colors[i];
         squares[i].style.display = "block";
     }
+    h1.style.backgroundColor = "steelblue";
 })
 
 let colors = generateRandomColors(num);
@@ -114,5 +118,5 @@ function resetGame() {
         squares[i].style.backgroundColor = colors[i];
     }
 
-    h1.style.backgroundColor = "#232323";
+    h1.style.backgroundColor = "steelblue";
 }
