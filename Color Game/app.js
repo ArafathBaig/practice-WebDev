@@ -3,48 +3,65 @@ const messageDisplay = document.querySelector('#message')
 const h1 = document.querySelector("h1");
 const resetButton = document.querySelector("#reset");
 const colorDisplay = document.getElementById("colorDisplay");
-const easyBtn = document.querySelector("#easyBtn");
-const hardBtn = document.querySelector("#hardBtn");
+const modeButton = document.querySelectorAll(".mode")
 
 let num = 6;
 
-easyBtn.addEventListener("click", function () {
-    num = 3;
-    easyBtn.classList.add("selected");
-    hardBtn.classList.remove("selected");
-    resetButton.textContent = "New Colors";
-    colors = generateRandomColors(3);
-    pickedColor = pickColor();
-    colorDisplay.textContent = pickedColor;
-    changeColors(pickedColor);
+for (let i = 0; i < modeButton.length; i++) {
+    modeButton[i].addEventListener("click", function () {
+        modeButton[0].classList.remove("selected");
+        modeButton[1].classList.remove("selected");
+        this.classList.add("selected");
 
-    for (let i = 0; i < squares.length; i++) {
-
-        if (colors[i]) {
-            squares[i].style.backgroundColor = colors[i];
+        if (this.textContent === "Easy") {
+            num = 3;
         } else {
-            squares[i].style.display = "none";
+            num = 6;
         }
-    }
-    h1.style.backgroundColor = "steelblue";
 
-})
+        resetGame();
+    })
+}
 
-hardBtn.addEventListener("click", function () {
-    num = 6;
-    hardBtn.classList.add("selected");
-    easyBtn.classList.remove("selected");
-    colors = generateRandomColors(6);
-    pickedColor = pickColor();
-    colorDisplay.textContent = pickedColor;
-    changeColors(pickedColor);
+// easyBtn.addEventListener("click", function () {
+//     num = 3;
+//     messageDisplay.textContent = "";
+//     easyBtn.classList.add("selected");
+//     hardBtn.classList.remove("selected");
+//     resetButton.textContent = "New Colors";
+//     colors = generateRandomColors(3);
+//     pickedColor = pickColor();
+//     colorDisplay.textContent = pickedColor;
+//     changeColors(pickedColor);
 
-    for (let i = 0; i < squares.length; i++) {
-        squares[i].style.backgroundColor = colors[i];
-        squares[i].style.display = "block";
-    }
-    h1.style.backgroundColor = "steelblue";
-})
+//     for (let i = 0; i < squares.length; i++) {
+
+//         if (colors[i]) {
+//             squares[i].style.backgroundColor = colors[i];
+//         } else {
+//             squares[i].style.display = "none";
+//         }
+//     }
+//     h1.style.backgroundColor = "steelblue";
+
+// })
+
+// hardBtn.addEventListener("click", function () {
+//     num = 6;
+//     messageDisplay.textContent = "";
+//     hardBtn.classList.add("selected");
+//     easyBtn.classList.remove("selected");
+//     colors = generateRandomColors(6);
+//     pickedColor = pickColor();
+//     colorDisplay.textContent = pickedColor;
+//     changeColors(pickedColor);
+
+//     for (let i = 0; i < squares.length; i++) {
+//         squares[i].style.backgroundColor = colors[i];
+//         squares[i].style.display = "block";
+//     }
+//     h1.style.backgroundColor = "steelblue";
+// })
 
 let colors = generateRandomColors(num);
 let pickedColor = pickColor();
@@ -115,8 +132,16 @@ function resetGame() {
     changeColors(pickedColor);
 
     for (let i = 0; i < squares.length; i++) {
-        squares[i].style.backgroundColor = colors[i];
+
+        if (colors[i]) {
+            squares[i].style.display = "block";
+            squares[i].style.backgroundColor = colors[i];
+        } else {
+            squares[i].style.display = "none";
+        }
+
     }
 
+    messageDisplay.textContent = "";
     h1.style.backgroundColor = "steelblue";
 }
