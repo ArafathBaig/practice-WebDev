@@ -7,12 +7,22 @@ const app = express();
 //     res.send("Hello, We Got you request!");
 // }) -->
 
+app.get('/r/:subreddit/:postId', (req, res) => {
+    const { subreddit, postId } = req.params;
+    res.send(`<h1> Browsing the ${subreddit} subreddit with ${postId}`)
+})
+
 app.get('/cats', (req, res) => {
     res.send("CAT RESULLLTTT")
 })
 
 app.get('/dogs', (req, res) => {
     res.send("Woooooof");
+})
+
+app.get('/search', (req, res) => {
+    console.log(req.query);
+    res.send("SEND SOMETHING BROTHER")
 })
 
 app.listen(3000, () => {
