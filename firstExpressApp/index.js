@@ -17,12 +17,12 @@ app.get('/cats', (req, res) => {
 })
 
 app.get('/dogs', (req, res) => {
-    res.send("Woooooof");
+    res.send("GOOOOOOFFFFIII");
 })
 
 app.get('/search', (req, res) => {
-    console.log(req.query);
-    res.send("SEND SOMETHING BROTHER")
+    const { q } = req.query;
+    res.send(q);
 })
 
 app.listen(3000, () => {
