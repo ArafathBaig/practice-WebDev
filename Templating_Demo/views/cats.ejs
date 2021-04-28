@@ -9,14 +9,17 @@
 </head>
 
 <body>
+    <h1>All the Cats</h1>
 
-    <h1>
-        <%= rand %>
-    </h1>
+    <% for(let cat of cats) { %>
+        <li>
+            <%= cat %>
+        </li>
+        <% } %>
 
-    <% if(rand %2===0 ) { <h2>That is even number</h2>
-        } %>
-
+            <p>
+                <%= cats %>
+            </p>
 </body>
 
 </html>
