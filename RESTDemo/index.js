@@ -40,6 +40,17 @@ app.post("/tacos", (req, res) => {
 app.get('/comments', (req, res) => {
     res.render('comments/index', { comments })
 })
+
+app.post('/comments', (req, res) => {
+    const { username, comment } = req.body;
+    let newComment = { username, comment };
+    comments.push(newComment);
+    console.log(comments)
+})
+
+app.get('/comments/new', (req, res) => {
+    res.render('comments/new')
+})
 app.listen(3000, () => {
     console.log("Started at port 3000")
 })
