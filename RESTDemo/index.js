@@ -51,6 +51,13 @@ app.post('/comments', (req, res) => {
 app.get('/comments/new', (req, res) => {
     res.render('comments/new')
 })
+
+app.get('/comments/:id', (req, res) => {
+    let { id } = req.params;
+    id = parseInt(id);
+    const object = comments[id - 1];
+    res.render('comments/show', { object })
+})
 app.listen(3000, () => {
     console.log("Started at port 3000")
 })
