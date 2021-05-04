@@ -58,6 +58,14 @@ app.get('/comments/:id', (req, res) => {
     const object = comments[id - 1];
     res.render('comments/show', { object })
 })
+
+app.patch('/comments/:id', (req, res) => {
+    let { id } = req.params;
+    let newCommentText = req.body.comment;
+    let update = comments[parseInt(id) - 1].comment;
+    update = newCommentText;
+    res.redirect('/comments')
+})
 app.listen(3000, () => {
     console.log("Started at port 3000")
 })
