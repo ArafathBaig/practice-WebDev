@@ -5,10 +5,13 @@ h1{
 
 body{
     margin: 0;
+    text-align: center;
 }
 
 .top-container{
-    background-color: #E9F5F5;
+    background-color: #E4F9F5;
+    position: relative;
+    padding-top: 6%;
 }
 
 .middle-container{
@@ -21,4 +24,25 @@ body{
     background-color: blue;
     width: 200px;
     height: 200px;
+}
+
+.pro{
+    text-decoration: underline;
+}
+
+.bottom-cloud{
+    position: absolute;
+    margin-left: 0%;
+    bottom: 50%;
+    
+}
+
+.top-cloud{
+    position: absolute;
+    margin-top: 3%;
+    right: 15%;
+}
+
+.heading-div{
+    margin-top: 10%;
 }
