@@ -2,6 +2,7 @@
 h1{
     margin-top: 0;
     font-family: 'Sacramento', cursive;
+    font-size: 562.5%;
 }
 
 h2{
@@ -21,19 +22,15 @@ body{
 .top-container{
     background-color: #E4F9F5;
     position: relative;
-    padding-top: 15%;
+    padding-top: 9%;
 }
 
 .middle-container{
-    background-color: red;
-    width: 200px;
-    height: 200px;
+
 }
 
 .bottom-container{
-    background-color: blue;
-    width: 200px;
-    height: 200px;
+
 }
 
 .pro{
@@ -49,6 +46,7 @@ body{
 
 .top-cloud{
     position: absolute;
-    top: 10%;
-    right: 15%;
+    top: 12%;
+    right: 30%;
 }
+
