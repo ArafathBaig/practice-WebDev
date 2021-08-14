@@ -12,6 +12,7 @@ h2{
     color: #66BFBF;
     line-height: 2;
     font-weight: normal;
+    padding-bottom: 1%;
 }
 
 h3{
@@ -19,25 +20,34 @@ h3{
     color: #11999E;
 }
 
+a{
+  color: #11999E
+}
+
+p{
+    line-height: 2;
+}
+
 body{
     margin: 0;
     text-align: center;
     font-family: 'Merriweather', serif;
+    color: #40514e;
 }
 
 
 .top-container{
     background-color: #E4F9F5;
     position: relative;
-    padding-top: 9%;
+    padding-top: 15%;
 }
 
 .middle-container{
-
+    margin: 100px 0;
 }
 
 .bottom-container{
-
+    background-color: #66BFBF;
 }
 
 .pro{
@@ -75,4 +85,16 @@ body{
     width: 20%;
     float: right;
     margin-left: 30px;
+}
+
+.intro{
+    width:30%;
+    margin: 0 auto;
+}
+
+hr{
+    width: 4%;
+    border: dotted #EAF6F6 6px;
+    border-bottom: none;
+    margin: 100px auto;
 }
