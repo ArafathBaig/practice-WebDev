@@ -24,10 +24,7 @@ objects.checkButton.addEventListener('click', () => {
 
   if (guessedNumber) {
     if (guessedNumber === secretNumber) {
-      highScore = Math.max(highScore, score);
-      objects.highScoreText.textContent = highScore;
-      objects.messageText.textContent = '🎉 Correct Number';
-      gameFlag = true;
+      winScenario();
     } else if (guessedNumber < secretNumber) {
       wrongGuessTemplate(false);
     } else {
@@ -51,7 +48,7 @@ const wrongGuessTemplate = high => {
   if (score === 0) gameFlag = true;
 
   if (gameFlag) {
-    objects.messageText.textContent = 'You Lost';
+    objects.messageText.textContent = '💥 You Lost the game!';
   }
 };
 
@@ -59,11 +56,23 @@ function randomNumber() {
   return Math.trunc(Math.random() * 20) + 1;
 }
 
+function winScenario() {
+  highScore = Math.max(highScore, score);
+  objects.highScoreText.textContent = highScore;
+  objects.messageText.textContent = '🎉 Correct Number';
+  objects.questionMark.textContent = secretNumber;
+  objects.questionMark.style.width = '30rem';
+  document.querySelector('body').style.backgroundColor = 'green';
+  gameFlag = true;
+}
+
 function init() {
   secretNumber = randomNumber();
-  objects.questionMark.textContent = secretNumber;
   score = 20;
   objects.messageText.textContent = 'Start guessing...';
   objects.scoreText.textContent = 20;
+  objects.questionMark.textContent = '?';
+  objects.questionMark.style.width = '15rem';
+  document.querySelector('body').style.backgroundColor = 'black';
   gameFlag = false;
 }
