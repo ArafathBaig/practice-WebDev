@@ -1,6 +1,6 @@
 "use strict";
 
-const player0 = document.getElementById(".player--0");
+const player0 = document.querySelector(".player--0");
 const player1 = document.querySelector(".player--1");
 const score0El = document.getElementById("score--0");
 const score1El = document.getElementById("score--1");
@@ -27,9 +27,20 @@ const displayCurrentScore = function () {
     : (current1El.textContent = currentScore1);
 };
 
-const incrementScore = function (score) {
+const incrementCurrentScore = function (score = 0) {
   currentPlayer ? (currentScore0 += score) : (currentScore1 += score);
   displayCurrentScore();
+};
+
+const displayTotalScore = function () {
+  currentPlayer
+    ? (score0El.textContent = score0)
+    : (score1El.textContent = score1);
+};
+
+const incrementTotalScore = function () {
+  currentPlayer ? (score0 += currentScore0) : (score1 += currentScore1);
+  displayTotalScore();
 };
 
 const rollDice = function () {
@@ -40,8 +51,14 @@ const rollDice = function () {
   return randomRoll;
 };
 
+const togglePlayer = function () {
+  player0.classList.toggle("player--active");
+  player1.classList.toggle("player--active");
+};
+
 const switchPlayer = function () {
   currentPlayer = !currentPlayer;
+  togglePlayer();
 };
 
 const resetScore = function () {
@@ -58,6 +75,12 @@ btnRollDice.addEventListener("click", function () {
     resetScore();
     switchPlayer();
   } else {
-    incrementScore(generatedNumber);
+    incrementCurrentScore(generatedNumber);
   }
+});
+
+btnHold.addEventListener("click", function () {
+  incrementTotalScore();
+  resetScore();
+  switchPlayer();
 });
