@@ -19,6 +19,13 @@ h1 {
   margin: auto auto;
 }
 
+h3 {
+  font-weight: bold;
+}
+
+p {
+  columns: #8f8f8f;
+}
 /* Navigation bar */
 
 .navbar {
@@ -50,5 +57,25 @@ h1 {
 
 .img-phone {
   width: 50%;
-  transform: rotate(30deg);
+  transform: rotate(25deg);
+}
+
+/* 2ND FLOW */
+
+#features {
+  padding: 7% 15%;
+}
+
+.feature-box {
+  text-align: center;
+  padding: 3%;
+}
+
+.icon {
+  color: #ef8172;
+  margin-bottom: 1rem;
+}
+
+.icon:hover {
+  color: #ff4c68;
 }
