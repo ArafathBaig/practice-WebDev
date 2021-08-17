@@ -17,9 +17,8 @@ let score0 = 0,
   score1 = 0;
 let currentScore0 = 0,
   currentScore1 = 0;
-score0El.textContent = 0;
-score1El.textContent = 0;
-diceEl.classList.add("hidden");
+let gameFlag = false;
+init();
 
 const displayCurrentScore = function () {
   currentPlayer
@@ -68,7 +67,25 @@ const resetScore = function () {
   current1El.textContent = currentScore1;
 };
 
+const highlightWinner = function () {
+  let player = currentPlayer ? 0 : 1;
+
+  document.querySelector(`.player--${player}`).classList.add("player--winner");
+  document
+    .querySelector(`.player--${player}`)
+    .classList.remove("player--active");
+};
+
+const checkIfWon = function () {
+  if (score0 >= 10 || score1 >= 100) {
+    highlightWinner();
+    gameFlag = true;
+  }
+};
+
 btnRollDice.addEventListener("click", function () {
+  if (gameFlag) return;
+
   let generatedNumber = Number(rollDice());
 
   if (generatedNumber === 1) {
@@ -80,7 +97,37 @@ btnRollDice.addEventListener("click", function () {
 });
 
 btnHold.addEventListener("click", function () {
+  if (gameFlag) return;
+
   incrementTotalScore();
+  checkIfWon();
   resetScore();
   switchPlayer();
 });
+
+btnNew.addEventListener("click", init);
+
+function dehighlightWinner() {
+  let player = currentPlayer ? 1 : 0;
+
+  document
+    .querySelector(`.player--${player}`)
+    .classList.remove("player--winner");
+}
+
+function init() {
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+  score0 = 0;
+  score1 = 0;
+  currentScore0 = 0;
+  currentScore1 = 0;
+  gameFlag = false;
+  dehighlightWinner();
+  player0.classList.add("player--active");
+  player1.classList.remove("player--active");
+  diceEl.classList.add("hidden");
+  currentPlayer = true;
+}
