@@ -8,12 +8,12 @@ body {
 }
 
 .container-fluid {
-  padding: 3% 15%;
+  padding: 3% 15% 10%;
 }
 
 h1 {
   font-family: "Montserrat, sans-serif";
-  font-size: 3.5rem;
+  font-size: 4.5rem;
   line-height: 1.5;
   font-weight: 900;
   margin: auto auto;
@@ -65,11 +65,15 @@ p {
 .img-phone {
   width: 50%;
   transform: rotate(25deg);
+  position: absolute;
+  right: 30%;
 }
 
 /* FEATURES */
 
 #features {
+  position: relative;
+  background-color: white;
   padding: 7% 15%;
 }
 
