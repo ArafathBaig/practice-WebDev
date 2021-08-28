@@ -129,6 +129,36 @@ p {
   padding: 3% 2%;
 }
 
+/* Call to Action */
+
+#cta {
+  background-color: #ff4c68;
+  text-align: center;
+  color: white;
+  padding: 5% 15% 5%;
+}
+
+#cta h3 {
+  font-family: "Montserrat, sans-serif";
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+/* Footer */
+
+.social-handles {
+  text-align: center;
+  padding: 5% 0% 5%;
+  opacity: 0.8;
+}
+
+.social-handles i {
+  padding-left: 1%;
+}
+
+#footer {
+  padding-top: 5px;
+}
 @media (max-width: 1028px) {
   #title {
     text-align: center;
