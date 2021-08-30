@@ -30,7 +30,20 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+
+  orderDelivery: function ({ startedIndex, mainIndex, time, address }) {
+    console.log(
+      `Order recieved ${this.starterMenu[startedIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
 };
+
+restaurant.orderDelivery({
+  time: "22:30",
+  address: "Via del Sole, 21",
+  mainIndex: 2,
+  starterIndex: 2,
+});
 
 // let [main, , secondary] = restaurant.categories;
 // console.log(main, secondary);
@@ -62,3 +75,19 @@ const {
 } = restaurant;
 
 console.log(restaurantName, hours, tags);
+
+const { menu = [], starterMenu: starters = [] } = restaurant;
+
+// let a, b;
+// const obj = {
+//   a: 23,
+//   b: 7,
+//   c: 14,
+// }(({ a, b } = obj));
+
+//nested object
+
+const {
+  fri: { open: shopOpenTime, close: shopCloseTime },
+} = openingHours;
+console.log(shopOpenTime, shopCloseTime);
