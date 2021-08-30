@@ -36,58 +36,76 @@ const restaurant = {
       `Order recieved ${this.starterMenu[startedIndex]} will be delivered to ${address} at ${time}`
     );
   },
+
+  orderPasta: function (...arr) {
+    console.log(arr);
+  },
 };
 
-restaurant.orderDelivery({
-  time: "22:30",
-  address: "Via del Sole, 21",
-  mainIndex: 2,
-  starterIndex: 2,
-});
+const arr = [7, 8, 9];
+const newArr = [1, 2, ...arr];
 
-// let [main, , secondary] = restaurant.categories;
-// console.log(main, secondary);
+console.log(newArr);
 
-// [main, secondary] = [secondary, main];
+const newMenu = [...restaurant.mainMenu, "Gnocci"];
+console.log(newMenu);
 
-// console.log(main, secondary);
+const str = "Arafath";
+const letter = [...str];
+console.log(letter);
 
-// const [starter, mainCourse] = restaurant.order(2, 0);
-// console.log(starter, mainCourse);
+restaurant.orderPasta("a", "b", "c");
 
-// const nested = [2, 5, 6, [3, 2, 4]];
+// restaurant.orderDelivery({
+//   time: "22:30",
+//   address: "Via del Sole, 21",
+//   mainIndex: 2,
+//   starterIndex: 2,
+// });
 
-// const [i, , , [j, k]] = nested;
-// console.log(i, j, k);
+// // let [main, , secondary] = restaurant.categories;
+// // console.log(main, secondary);
 
-// // Default value
+// // [main, secondary] = [secondary, main];
 
-// const [p = 1, q = 1, r = 1] = [8, 9];
-// console.log(p, q, r);
+// // console.log(main, secondary);
 
-const { name, openingHours, categories } = restaurant;
-console.log(name, openingHours, categories);
+// // const [starter, mainCourse] = restaurant.order(2, 0);
+// // console.log(starter, mainCourse);
 
-const {
-  name: restaurantName,
-  openingHours: hours,
-  categories: tags,
-} = restaurant;
+// // const nested = [2, 5, 6, [3, 2, 4]];
 
-console.log(restaurantName, hours, tags);
+// // const [i, , , [j, k]] = nested;
+// // console.log(i, j, k);
 
-const { menu = [], starterMenu: starters = [] } = restaurant;
+// // // Default value
 
-// let a, b;
-// const obj = {
-//   a: 23,
-//   b: 7,
-//   c: 14,
-// }(({ a, b } = obj));
+// // const [p = 1, q = 1, r = 1] = [8, 9];
+// // console.log(p, q, r);
 
-//nested object
+// const { name, openingHours, categories } = restaurant;
+// console.log(name, openingHours, categories);
 
-const {
-  fri: { open: shopOpenTime, close: shopCloseTime },
-} = openingHours;
-console.log(shopOpenTime, shopCloseTime);
+// const {
+//   name: restaurantName,
+//   openingHours: hours,
+//   categories: tags,
+// } = restaurant;
+
+// console.log(restaurantName, hours, tags);
+
+// const { menu = [], starterMenu: starters = [] } = restaurant;
+
+// // let a, b;
+// // const obj = {
+// //   a: 23,
+// //   b: 7,
+// //   c: 14,
+// // }(({ a, b } = obj));
+
+// //nested object
+
+// const {
+//   fri: { open: shopOpenTime, close: shopCloseTime },
+// } = openingHours;
+// console.log(shopOpenTime, shopCloseTime);
