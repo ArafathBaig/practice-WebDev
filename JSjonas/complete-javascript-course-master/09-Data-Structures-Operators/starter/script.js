@@ -47,47 +47,117 @@ const restaurant = {
   },
 };
 
-// REST PATTERN
-
-const arr = [1, 2, ...[3, 4]];
-
-const [a, b, ...others] = [1, 2, 3, 4, 5];
-
-console.log(others);
-
-const [pizza, , risotto, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-
-console.log(pizza, risotto, otherFood);
-
-//OBJECTS
-
-const { sat, ...weekdays } = restaurant.openingHours;
-
-console.log(weekdays);
-
-//FUNCTIONS
-const add = function (...numbers) {
-  console.log(numbers);
-
-  let sum = 0;
-
-  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
-
-  console.log(sum);
+const game = {
+  team1: "Bayern Munich",
+  team2: "Borrussia Dortmund",
+  players: [
+    [
+      "Neuer",
+      "Pavard",
+      "Martinez",
+      "Alaba",
+      "Davies",
+      "Kimmich",
+      "Goretzka",
+      "Coman",
+      "Muller",
+      "Gnarby",
+      "Lewandowski",
+    ],
+    [
+      "Burki",
+      "Schulz",
+      "Hummels",
+      "Akanji",
+      "Hakimi",
+      "Weigl",
+      "Witsel",
+      "Hazard",
+      "Brandt",
+      "Sancho",
+      "Gotze",
+    ],
+  ],
+  score: "4:0",
+  scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+  date: "Nov 9th, 2037",
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
 };
 
-add(2, 3);
-add(5, 3, 7, 2);
-add(8, 2, 5, 3, 2, 1, 4);
+const [players1, players2] = game.players;
 
-const x = [23, 5, 7];
+console.log(players1, players2);
 
-add(...x);
+const [gk, ...fieldPlayers] = players1;
 
-restaurant.orderPizza("mushrooms", "onions", "olives", "spinach");
+console.log(gk, fieldPlayers);
+
+const allPlayers = [...players1, ...players2];
+
+console.log(allPlayers);
+
+const finalTeam = [...players1, "Thiago", "Countinho", "Perisic"];
+
+console.log(finalTeam);
+
+const { team1: t1, x: d, team2: t2 } = game.odds;
+
+console.log(t1, d, t2);
+
+const printGoals = function (...goalsScoredBy) {
+  for (let i = 0; i < goalsScoredBy.length; i++) {
+    console.log(goalsScoredBy[i]);
+  }
+};
+
+// // NULLISH COALESCING OPERATOR
+// const guestCorrect =
+
+// // REST PATTERN
+
+// const arr = [1, 2, ...[3, 4]];
+
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+
+// console.log(others);
+
+// const [pizza, , risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+
+// console.log(pizza, risotto, otherFood);
+
+// //OBJECTS
+
+// const { sat, ...weekdays } = restaurant.openingHours;
+
+// console.log(weekdays);
+
+// //FUNCTIONS
+// const add = function (...numbers) {
+//   console.log(numbers);
+
+//   let sum = 0;
+
+//   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+
+//   console.log(sum);
+// };
+
+// add(2, 3);
+// add(5, 3, 7, 2);
+// add(8, 2, 5, 3, 2, 1, 4);
+
+// const x = [23, 5, 7];
+
+// add(...x);
+
+// restaurant.orderPizza("mushrooms", "onions", "olives", "spinach");
 
 // const arr = [7, 8, 9];
 // const newArr = [1, 2, ...arr];
