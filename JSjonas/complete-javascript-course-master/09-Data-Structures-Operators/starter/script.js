@@ -27,21 +27,21 @@ const restaurant = {
     },
   },
 
-  order: function (starterIndex, mainIndex) {
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-  orderDelivery: function ({ startedIndex, mainIndex, time, address }) {
+  orderDelivery({ startedIndex, mainIndex, time, address }) {
     console.log(
       `Order recieved ${this.starterMenu[startedIndex]} will be delivered to ${address} at ${time}`
     );
   },
 
-  orderPasta: function (...arr) {
+  orderPasta(...arr) {
     console.log(arr);
   },
 
-  orderPizza: function (mainIngredient, ...optionalIngredient) {
+  orderPizza(mainIngredient, ...optionalIngredient) {
     console.log(mainIngredient);
     console.log(optionalIngredient);
   },
