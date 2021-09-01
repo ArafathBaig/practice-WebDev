@@ -40,21 +40,68 @@ const restaurant = {
   orderPasta: function (...arr) {
     console.log(arr);
   },
+
+  orderPizza: function (mainIngredient, ...optionalIngredient) {
+    console.log(mainIngredient);
+    console.log(optionalIngredient);
+  },
 };
 
-const arr = [7, 8, 9];
-const newArr = [1, 2, ...arr];
+// REST PATTERN
 
-console.log(newArr);
+const arr = [1, 2, ...[3, 4]];
 
-const newMenu = [...restaurant.mainMenu, "Gnocci"];
-console.log(newMenu);
+const [a, b, ...others] = [1, 2, 3, 4, 5];
 
-const str = "Arafath";
-const letter = [...str];
-console.log(letter);
+console.log(others);
 
-restaurant.orderPasta("a", "b", "c");
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+
+console.log(pizza, risotto, otherFood);
+
+//OBJECTS
+
+const { sat, ...weekdays } = restaurant.openingHours;
+
+console.log(weekdays);
+
+//FUNCTIONS
+const add = function (...numbers) {
+  console.log(numbers);
+
+  let sum = 0;
+
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+
+  console.log(sum);
+};
+
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
+
+const x = [23, 5, 7];
+
+add(...x);
+
+restaurant.orderPizza("mushrooms", "onions", "olives", "spinach");
+
+// const arr = [7, 8, 9];
+// const newArr = [1, 2, ...arr];
+
+// console.log(newArr);
+
+// const newMenu = [...restaurant.mainMenu, "Gnocci"];
+// console.log(newMenu);
+
+// const str = "Arafath";
+// const letter = [...str];
+// console.log(letter);
+
+// restaurant.orderPasta("a", "b", "c");
 
 // restaurant.orderDelivery({
 //   time: "22:30",
