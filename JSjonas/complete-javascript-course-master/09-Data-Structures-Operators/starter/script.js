@@ -47,6 +47,12 @@ const restaurant = {
   },
 };
 
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) console.log(`${i}: ${el}`);
+
 const game = {
   team1: "Bayern Munich",
   team2: "Borrussia Dortmund",
@@ -88,31 +94,31 @@ const game = {
   },
 };
 
-const [players1, players2] = game.players;
+// const [players1, players2] = game.players;
 
-console.log(players1, players2);
+// console.log(players1, players2);
 
-const [gk, ...fieldPlayers] = players1;
+// const [gk, ...fieldPlayers] = players1;
 
-console.log(gk, fieldPlayers);
+// console.log(gk, fieldPlayers);
 
-const allPlayers = [...players1, ...players2];
+// const allPlayers = [...players1, ...players2];
 
-console.log(allPlayers);
+// console.log(allPlayers);
 
-const finalTeam = [...players1, "Thiago", "Countinho", "Perisic"];
+// const finalTeam = [...players1, "Thiago", "Countinho", "Perisic"];
 
-console.log(finalTeam);
+// console.log(finalTeam);
 
-const { team1: t1, x: d, team2: t2 } = game.odds;
+// const { team1: t1, x: d, team2: t2 } = game.odds;
 
-console.log(t1, d, t2);
+// console.log(t1, d, t2);
 
-const printGoals = function (...goalsScoredBy) {
-  for (let i = 0; i < goalsScoredBy.length; i++) {
-    console.log(goalsScoredBy[i]);
-  }
-};
+// const printGoals = function (...goalsScoredBy) {
+//   for (let i = 0; i < goalsScoredBy.length; i++) {
+//     console.log(goalsScoredBy[i]);
+//   }
+// };
 
 // // NULLISH COALESCING OPERATOR
 // const guestCorrect =
