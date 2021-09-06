@@ -94,19 +94,41 @@ const game = {
   },
 };
 
-for (const day of Object.keys(restaurant.openingHours)) {
-  console.log(day);
+//CODING CHALLENGE 2
+
+const obj = {};
+
+for (const [goal, player] of game.scored.entries()) {
+  console.log(`Goal ${goal}: ${player}`);
+
+  obj[player]++ || (obj[player] = 1);
 }
 
-const values = Object.values(restaurant.openingHours);
+let avg = 0;
 
-console.log(values);
+for (const [name, bet] of Object.entries(game.odds)) {
+  avg += bet;
 
-const entries = Object.entries(restaurant.openingHours);
-
-for (const [key, { open, close }] of entries) {
-  console.log(`On ${key} we open at ${open} and close at ${close}`);
+  const teamStr = name === "x" ? "draw" : "victory " + game[name];
+  console.log(`Odd of ${teamStr}: ${bet}`);
 }
+
+console.log(avg / Object.values(game.odds).length);
+
+console.log(obj);
+// for (const day of Object.keys(restaurant.openingHours)) {
+//   console.log(day);
+// }
+
+// const values = Object.values(restaurant.openingHours);
+
+// console.log(values);
+
+// const entries = Object.entries(restaurant.openingHours);
+
+// for (const [key, { open, close }] of entries) {
+//   console.log(`On ${key} we open at ${open} and close at ${close}`);
+// }
 // //OPTION CHAINGING
 
 // console.log(restaurant.openingHours?.mon?.open);
