@@ -47,11 +47,11 @@ const restaurant = {
   },
 };
 
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
-for (const item of menu) console.log(item);
+// for (const item of menu) console.log(item);
 
-for (const [i, el] of menu.entries()) console.log(`${i}: ${el}`);
+// for (const [i, el] of menu.entries()) console.log(`${i}: ${el}`);
 
 const game = {
   team1: "Bayern Munich",
@@ -93,6 +93,34 @@ const game = {
     team2: 6.5,
   },
 };
+
+// //OPTION CHAINGING
+
+// console.log(restaurant.openingHours?.mon?.open);
+
+// const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+// for (const day of days) {
+//   console.log(day);
+//   const open = restaurant.openingHours[day]?.open ?? "closed";
+
+//   console.log(`On ${day}, we open at ${open}`);
+// }
+
+// // Methods
+
+// console.log(restaurant.order?.(0, 1) ?? "Method does not exist");
+
+// //Array
+
+// const users = [
+//   {
+//     name: "Jonas",
+//     email: "hello@jonas",
+//   },
+// ];
+
+// console.log(users[0]?.name ?? "Users array empty");
 
 // const [players1, players2] = game.players;
 
