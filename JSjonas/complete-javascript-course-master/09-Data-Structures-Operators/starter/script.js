@@ -94,6 +94,19 @@ const game = {
   },
 };
 
+for (const day of Object.keys(restaurant.openingHours)) {
+  console.log(day);
+}
+
+const values = Object.values(restaurant.openingHours);
+
+console.log(values);
+
+const entries = Object.entries(restaurant.openingHours);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
 // //OPTION CHAINGING
 
 // console.log(restaurant.openingHours?.mon?.open);
