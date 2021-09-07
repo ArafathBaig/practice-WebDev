@@ -94,23 +94,68 @@ const game = {
   },
 };
 
+//Maps
+
+const question = new Map([
+  ["question", "What is the best programming language in the world?"],
+  [1, "C"],
+  [2, "Java"],
+  [3, "JavaScript"],
+  ["correct", 3],
+  [true, "Correct"],
+  [false, "Try again"],
+]);
+
+console.log(question);
+
+const hoursMap = new Map(Object.entries(restaurant.openingHours));
+
+console.log(hoursMap);
+
+for (const [key, value] of question) {
+  console.log(key, value);
+}
+
+// const answer = Number(prompt("Guess answer?"));
+
+// console.log(question.get(question.get("correct") === answer));
+
+console.log([...question.keys()]);
+
+// const rest = new Map();
+
+// rest.set("name", "Classico Italiano");
+// rest.set(1, "Firenze, Italy");
+// rest.set(2, "Lisbon, Portugal");
+// rest
+//   .set("categories", restaurant.categories)
+//   .set("open", 11)
+//   .set("close", 23)
+//   .set(true, "We are open")
+//   .set(false, "We are close");
+
+// console.log(rest.get("name"));
+// console.log(rest.get(true));
+
+// console.log(rest.get("categories"));
+
 // SET
 
-const ordersSet = new Set(["Pasta", "Pizza", "Risotto", "Pasta"]);
+// const ordersSet = new Set(["Pasta", "Pizza", "Risotto", "Pasta"]);
 
-console.log(ordersSet);
+// console.log(ordersSet);
 
-console.log(ordersSet.has("Pizza"));
-console.log(ordersSet.size);
+// console.log(ordersSet.has("Pizza"));
+// console.log(ordersSet.size);
 
-ordersSet.add("GarlicBread");
-ordersSet.delete("Risotto");
+// ordersSet.add("GarlicBread");
+// ordersSet.delete("Risotto");
 
-const staff = ["Waiter", "Staff"];
+// const staff = ["Waiter", "Staff"];
 
-const staffUnique = [...new Set(staff)];
+// const staffUnique = [...new Set(staff)];
 
-console.log(staffUnique);
+// console.log(staffUnique);
 
 //CODING CHALLENGE 2
 
