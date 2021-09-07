@@ -94,28 +94,46 @@ const game = {
   },
 };
 
+// SET
+
+const ordersSet = new Set(["Pasta", "Pizza", "Risotto", "Pasta"]);
+
+console.log(ordersSet);
+
+console.log(ordersSet.has("Pizza"));
+console.log(ordersSet.size);
+
+ordersSet.add("GarlicBread");
+ordersSet.delete("Risotto");
+
+const staff = ["Waiter", "Staff"];
+
+const staffUnique = [...new Set(staff)];
+
+console.log(staffUnique);
+
 //CODING CHALLENGE 2
 
-const obj = {};
+// const obj = {};
 
-for (const [goal, player] of game.scored.entries()) {
-  console.log(`Goal ${goal}: ${player}`);
+// for (const [goal, player] of game.scored.entries()) {
+//   console.log(`Goal ${goal}: ${player}`);
 
-  obj[player]++ || (obj[player] = 1);
-}
+//   obj[player]++ || (obj[player] = 1);
+// }
+//  avg = 0;
 
-let avg = 0;
+// let
+// for (const [name, bet] of Object.entries(game.odds)) {
+//   avg += bet;
 
-for (const [name, bet] of Object.entries(game.odds)) {
-  avg += bet;
+//   const teamStr = name === "x" ? "draw" : "victory " + game[name];
+//   console.log(`Odd of ${teamStr}: ${bet}`);
+// }
 
-  const teamStr = name === "x" ? "draw" : "victory " + game[name];
-  console.log(`Odd of ${teamStr}: ${bet}`);
-}
+// console.log(avg / Object.values(game.odds).length);
 
-console.log(avg / Object.values(game.odds).length);
-
-console.log(obj);
+// console.log(obj);
 // for (const day of Object.keys(restaurant.openingHours)) {
 //   console.log(day);
 // }
