@@ -94,33 +94,58 @@ const game = {
   },
 };
 
-//Maps
-
-const question = new Map([
-  ["question", "What is the best programming language in the world?"],
-  [1, "C"],
-  [2, "Java"],
-  [3, "JavaScript"],
-  ["correct", 3],
-  [true, "Correct"],
-  [false, "Try again"],
+const gameEvents = new Map([
+  [17, "⚽️ GOAL"],
+  [36, "🔁 Substitution"],
+  [47, "⚽️ GOAL"],
+  [61, "🔁 Substitution"],
+  [64, "🔶 Yellow card"],
+  [69, "🔴 Red card"],
+  [70, "🔁 Substitution"],
+  [72, "🔁 Substitution"],
+  [76, "⚽️ GOAL"],
+  [80, "⚽️ GOAL"],
+  [92, "🔶 Yellow card"],
 ]);
 
-console.log(question);
+const differentEvent = [...new Set(gameEvents.values())];
 
-const hoursMap = new Map(Object.entries(restaurant.openingHours));
+console.log(differentEvent);
 
-console.log(hoursMap);
+for (const [key, value] of gameEvents.entries()) {
+  const str = key >= 45 ? "[FIRST HALF]" : "[SECOND HALF]";
 
-for (const [key, value] of question) {
-  console.log(key, value);
+  console.log(`${str} ${key}: ${value}`);
 }
+gameEvents.delete(64);
 
-// const answer = Number(prompt("Guess answer?"));
+// //Maps
 
-// console.log(question.get(question.get("correct") === answer));
+// const question = new Map([
+//   ["question", "What is the best programming language in the world?"],
+//   [1, "C"],
+//   [2, "Java"],
+//   [3, "JavaScript"],
+//   ["correct", 3],
+//   [true, "Correct"],
+//   [false, "Try again"],
+// ]);
 
-console.log([...question.keys()]);
+// console.log(question);
+
+// const hoursMap = new Map(Object.entries(restaurant.openingHours));
+
+// console.log(hoursMap);
+
+// for (const [key, value] of question) {
+//   console.log(key, value);
+// }
+
+// // const answer = Number(prompt("Guess answer?"));
+
+// // console.log(question.get(question.get("correct") === answer));
+
+// console.log([...question.keys()]);
 
 // const rest = new Map();
 
