@@ -113,19 +113,36 @@ const gameEvents = new Map([
 const airline = "TAP Air Portugal";
 const plane = "A320";
 
-console.log(airline.charAt(4));
+const email1 = "hello@jonas.io";
+const email2 = "   hello@jonas.io  ";
 
-console.log(airline.slice(4, 7));
+const trimmedEmail = email2.toLowerCase().trim();
 
-const checkMiddleSeat = function (seat) {
-  const s = seat.slice(-1);
-  if (s === "B" || s === "E") console.log("You got the middle Seat");
-  else console.log("You got lucky");
-};
+console.log(email1 === trimmedEmail);
 
-checkMiddleSeat("11B");
-checkMiddleSeat("23C");
-checkMiddleSeat("3E");
+const priceGB = "288.97$";
+const priceUS = priceGB.replace("$", "%").replace(",", ".");
+
+console.log(priceUS);
+
+console.log(priceUS.replaceAll("8", "9"));
+
+console.log(airline.includes("Air"));
+console.log(airline.startsWith("TA"));
+
+// console.log(airline.charAt(4));
+
+// console.log(airline.slice(4, 7));
+
+// const checkMiddleSeat = function (seat) {
+//   const s = seat.slice(-1);
+//   if (s === "B" || s === "E") console.log("You got the middle Seat");
+//   else console.log("You got lucky");
+// };
+
+// checkMiddleSeat("11B");
+// checkMiddleSeat("23C");
+// checkMiddleSeat("3E");
 //Coding challenges 3
 
 // const differentEvent = [...new Set(gameEvents.values())];
