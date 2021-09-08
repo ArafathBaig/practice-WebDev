@@ -108,16 +108,36 @@ const gameEvents = new Map([
   [92, "🔶 Yellow card"],
 ]);
 
-const differentEvent = [...new Set(gameEvents.values())];
+//STrings java
 
-console.log(differentEvent);
+const airline = "TAP Air Portugal";
+const plane = "A320";
 
-for (const [key, value] of gameEvents.entries()) {
-  const str = key >= 45 ? "[FIRST HALF]" : "[SECOND HALF]";
+console.log(airline.charAt(4));
 
-  console.log(`${str} ${key}: ${value}`);
-}
-gameEvents.delete(64);
+console.log(airline.slice(4, 7));
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  if (s === "B" || s === "E") console.log("You got the middle Seat");
+  else console.log("You got lucky");
+};
+
+checkMiddleSeat("11B");
+checkMiddleSeat("23C");
+checkMiddleSeat("3E");
+//Coding challenges 3
+
+// const differentEvent = [...new Set(gameEvents.values())];
+
+// console.log(differentEvent);
+
+// for (const [key, value] of gameEvents.entries()) {
+//   const str = key >= 45 ? "[FIRST HALF]" : "[SECOND HALF]";
+
+//   console.log(`${str} ${key}: ${value}`);
+// }
+// gameEvents.delete(64);
 
 // //Maps
 
