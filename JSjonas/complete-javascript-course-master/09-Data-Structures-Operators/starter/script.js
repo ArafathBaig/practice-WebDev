@@ -108,43 +108,73 @@ const gameEvents = new Map([
   [92, "🔶 Yellow card"],
 ]);
 
-//STrings java
+const arr = [
+  "underscore_Case",
+  "first_name",
+  "Some_Variable",
+  "  calculate_AGE",
+  "delayed_departure",
+  "John_Cena_Chaddi",
+];
 
-console.log("a+very+nice+string".split("+"));
+const camelCase = function (variable) {
+  variable = variable.trim();
+  const changeCase = variable.split("_");
 
-const [firstName, lastName] = "Jonas Schmedtmann".split(" ");
-
-const newName = ["Mr.", firstName, lastName.toUpperCase()].join(" ");
-
-console.log(newName);
-
-const capitalizeName = function (name) {
-  const nameArr = name.split(" ");
-
-  const returnArray = [];
-  for (const n of nameArr) {
-    returnArray.push(n[0].toUpperCase() + n.slice(1));
+  for (let i = 1; i < changeCase.length; i++) {
+    changeCase[i] =
+      changeCase[i][0].toUpperCase() + changeCase[i].slice(1).toLowerCase();
   }
 
-  console.log(returnArray.join(" "));
-};
-const passenger = "jessica nan smith davis";
-
-capitalizeName(passenger);
-
-console.log("Jonas".padStart(25, "+").padEnd(35, "-"));
-
-const maskCreditCard = function (number) {
-  const strNumber = number + "";
-  const last = strNumber.slice(-4);
-  return last.padStart(strNumber.length, "*");
+  changeCase[0] =
+    changeCase[0][0].toLowerCase() + changeCase[0].slice(1).toLowerCase();
+  return changeCase.join("");
 };
 
-console.log(maskCreditCard(132313123));
+let resArr = [];
+for (const varr of arr) {
+  resArr.push(camelCase(varr));
+}
 
-const message = "Dumpak";
+console.log(resArr);
 
-console.log(message.repeat(5));
+//STrings java
+
+// console.log("a+very+nice+string".split("+"));
+
+// const [firstName, lastName] = "Jonas Schmedtmann".split(" ");
+
+// const newName = ["Mr.", firstName, lastName.toUpperCase()].join(" ");
+
+// console.log(newName);
+
+// const capitalizeName = function (name) {
+//   const nameArr = name.split(" ");
+
+//   const returnArray = [];
+//   for (const n of nameArr) {
+//     returnArray.push(n[0].toUpperCase() + n.slice(1));
+//   }
+
+//   console.log(returnArray.join(" "));
+// };
+// const passenger = "jessica nan smith davis";
+
+// capitalizeName(passenger);
+
+// console.log("Jonas".padStart(25, "+").padEnd(35, "-"));
+
+// const maskCreditCard = function (number) {
+//   const strNumber = number + "";
+//   const last = strNumber.slice(-4);
+//   return last.padStart(strNumber.length, "*");
+// };
+
+// console.log(maskCreditCard(132313123));
+
+// const message = "Dumpak";
+
+// console.log(message.repeat(5));
 // const airline = "TAP Air Portugal";
 // const plane = "A320";
 
