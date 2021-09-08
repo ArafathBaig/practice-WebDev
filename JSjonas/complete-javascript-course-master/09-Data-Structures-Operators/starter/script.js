@@ -110,25 +110,60 @@ const gameEvents = new Map([
 
 //STrings java
 
-const airline = "TAP Air Portugal";
-const plane = "A320";
+console.log("a+very+nice+string".split("+"));
 
-const email1 = "hello@jonas.io";
-const email2 = "   hello@jonas.io  ";
+const [firstName, lastName] = "Jonas Schmedtmann".split(" ");
 
-const trimmedEmail = email2.toLowerCase().trim();
+const newName = ["Mr.", firstName, lastName.toUpperCase()].join(" ");
 
-console.log(email1 === trimmedEmail);
+console.log(newName);
 
-const priceGB = "288.97$";
-const priceUS = priceGB.replace("$", "%").replace(",", ".");
+const capitalizeName = function (name) {
+  const nameArr = name.split(" ");
 
-console.log(priceUS);
+  const returnArray = [];
+  for (const n of nameArr) {
+    returnArray.push(n[0].toUpperCase() + n.slice(1));
+  }
 
-console.log(priceUS.replaceAll("8", "9"));
+  console.log(returnArray.join(" "));
+};
+const passenger = "jessica nan smith davis";
 
-console.log(airline.includes("Air"));
-console.log(airline.startsWith("TA"));
+capitalizeName(passenger);
+
+console.log("Jonas".padStart(25, "+").padEnd(35, "-"));
+
+const maskCreditCard = function (number) {
+  const strNumber = number + "";
+  const last = strNumber.slice(-4);
+  return last.padStart(strNumber.length, "*");
+};
+
+console.log(maskCreditCard(132313123));
+
+const message = "Dumpak";
+
+console.log(message.repeat(5));
+// const airline = "TAP Air Portugal";
+// const plane = "A320";
+
+// const email1 = "hello@jonas.io";
+// const email2 = "   hello@jonas.io  ";
+
+// const trimmedEmail = email2.toLowerCase().trim();
+
+// console.log(email1 === trimmedEmail);
+
+// const priceGB = "288.97$";
+// const priceUS = priceGB.replace("$", "%").replace(",", ".");
+
+// console.log(priceUS);
+
+// console.log(priceUS.replaceAll("8", "9"));
+
+// console.log(airline.includes("Air"));
+// console.log(airline.startsWith("TA"));
 
 // console.log(airline.charAt(4));
 
