@@ -23,23 +23,41 @@
 // createBooking('LH123');
 // createBooking('LH332', undefined, 5);
 
-const flight = 'LH234';
+// const flight = 'LH234';
 
-const jonas = {
-  name: 'Max Max',
-  passport: 23434242,
+// const jonas = {
+//   name: 'Max Max',
+//   passport: 23434242,
+// };
+
+// const checkIn = function (flightNum, passenger) {
+//   flightNum = 'LH999';
+//   passenger.name = 'Mr. ' + passenger.name;
+
+//   if (passenger.passport === 23434242) {
+//     alert('Check in');
+//   } else {
+//     alert('Wrong passport');
+//   }
+// };
+
+// checkIn(flight, jonas);
+// console.log(flight, jonas);
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
 };
 
-const checkIn = function (flightNum, passenger) {
-  flightNum = 'LH999';
-  passenger.name = 'Mr. ' + passenger.name;
+const greeterHey = greet('Hey');
+greeterHey('Dumpak');
 
-  if (passenger.passport === 23434242) {
-    alert('Check in');
-  } else {
-    alert('Wrong passport');
-  }
+greet('Hello')('Silki');
+
+const greetArrow = greeting => name => {
+  console.log(`${greeting} ${name}`);
 };
 
-checkIn(flight, jonas);
-console.log(flight, jonas);
+const heyArrow = greetArrow('Hellowww');
+heyArrow('Justin');
